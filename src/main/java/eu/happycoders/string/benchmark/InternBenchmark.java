@@ -51,13 +51,29 @@ public class InternBenchmark {
 
   private int index;
 
-  /** Fills the string table; only the benchmark methods that take this state need it. */
+  /**
+   * Fills the string table; only the benchmark methods that take this state need it.
+   *
+   * <p>The string table checks whether it should grow when the garbage collector reports its dead
+   * entries, not only on insertion. Without garbage collections after the fill, 1,000,000 strings
+   * are measured in a table that is too small. With {@code settled}, several collections run first.
+   */
   @State(Scope.Benchmark)
   public static class InternedStrings {
+
+    @Param({"true", "false"})
+    private boolean settled;
+
     @Setup
-    public void setUp(InternBenchmark benchmark) {
+    public void setUp(InternBenchmark benchmark) throws InterruptedException {
       for (int i = 0; i < benchmark.size; i++) {
         benchmark.canonical[i] = benchmark.createString(i).intern();
+      }
+      if (settled) {
+        for (int i = 0; i < 6; i++) {
+          System.gc();
+          Thread.sleep(500);
+        }
       }
     }
   }
