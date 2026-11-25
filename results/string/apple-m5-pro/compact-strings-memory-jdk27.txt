@@ -1,0 +1,12 @@
+JDK 27+35-2325 -Xmx4g
+Price: 0000000.00 i$   String: 24.0 bytes, byte[]: 32.0 bytes, total: 56.0 bytes per string
+Price: 0000000.00 i€   String: 24.0 bytes, byte[]: 56.0 bytes, total: 80.0 bytes per string
+
+JDK 27+35-2325 -Xmx4g -XX:-UseCompactObjectHeaders
+Price: 0000000.00 i$   String: 24.0 bytes, byte[]: 40.0 bytes, total: 64.0 bytes per string
+Price: 0000000.00 i€   String: 24.0 bytes, byte[]: 56.0 bytes, total: 80.0 bytes per string
+
+JDK 27+35-2325 -Xmx4g -XX:-CompactStrings
+Price: 0000000.00 i$   String: 24.0 bytes, byte[]: 56.0 bytes, total: 80.0 bytes per string
+Price: 0000000.00 i€   String: 24.0 bytes, byte[]: 56.0 bytes, total: 80.0 bytes per string
+

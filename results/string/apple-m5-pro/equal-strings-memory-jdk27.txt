@@ -1,0 +1,79 @@
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseG1GC plain
+String: 1,000,033 instances, 24,000,792 bytes
+byte[]: 1,000,033 instances, 32,001,560 bytes
+total:  56,002,352 bytes
+two equal strings: == false, equals() true
+native before: - Symbol (reserved=1232KB, committed=1232KB); - String Deduplication (reserved=1KB, committed=1KB)
+native after:  - Symbol (reserved=1243KB, committed=1243KB); - String Deduplication (reserved=1KB, committed=1KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseG1GC -XX:+UseStringDeduplication plain
+String: 1,000,033 instances, 24,000,792 bytes
+byte[]: 1,022 instances, 33,112 bytes
+total:  24,033,904 bytes
+two equal strings: == false, equals() true
+native before: - Symbol (reserved=1232KB, committed=1232KB); - String Deduplication (reserved=79KB, committed=79KB)
+native after:  - Symbol (reserved=1243KB, committed=1243KB); - String Deduplication (reserved=295KB, committed=295KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseParallelGC plain
+String: 1,000,033 instances, 24,000,792 bytes
+byte[]: 1,000,033 instances, 32,001,560 bytes
+total:  56,002,352 bytes
+two equal strings: == false, equals() true
+native before: - Symbol (reserved=1232KB, committed=1232KB); - String Deduplication (reserved=1KB, committed=1KB)
+native after:  - Symbol (reserved=1243KB, committed=1243KB); - String Deduplication (reserved=1KB, committed=1KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseParallelGC -XX:+UseStringDeduplication plain
+String: 1,000,033 instances, 24,000,792 bytes
+byte[]: 1,022 instances, 33,112 bytes
+total:  24,033,904 bytes
+two equal strings: == false, equals() true
+native before: - Symbol (reserved=1232KB, committed=1232KB); - String Deduplication (reserved=80KB, committed=80KB)
+native after:  - Symbol (reserved=1243KB, committed=1243KB); - String Deduplication (reserved=231KB, committed=231KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseSerialGC plain
+String: 1,000,033 instances, 24,000,792 bytes
+byte[]: 1,000,033 instances, 32,001,560 bytes
+total:  56,002,352 bytes
+two equal strings: == false, equals() true
+native before: - Symbol (reserved=1232KB, committed=1232KB); - String Deduplication (reserved=1KB, committed=1KB)
+native after:  - Symbol (reserved=1243KB, committed=1243KB); - String Deduplication (reserved=1KB, committed=1KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseSerialGC -XX:+UseStringDeduplication plain
+String: 1,000,033 instances, 24,000,792 bytes
+byte[]: 1,022 instances, 33,112 bytes
+total:  24,033,904 bytes
+two equal strings: == false, equals() true
+native before: - Symbol (reserved=1232KB, committed=1232KB); - String Deduplication (reserved=80KB, committed=80KB)
+native after:  - Symbol (reserved=1243KB, committed=1243KB); - String Deduplication (reserved=263KB, committed=263KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseZGC plain
+String: 1,000,036 instances, 24,000,864 bytes
+byte[]: 1,000,036 instances, 32,001,712 bytes
+total:  56,002,576 bytes
+two equal strings: == false, equals() true
+native before: - Symbol (reserved=1441KB, committed=1441KB); - String Deduplication (reserved=1KB, committed=1KB)
+native after:  - Symbol (reserved=1453KB, committed=1453KB); - String Deduplication (reserved=1KB, committed=1KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseZGC -XX:+UseStringDeduplication plain
+String: 1,000,036 instances, 24,000,864 bytes
+byte[]: 1,025 instances, 33,272 bytes
+total:  24,034,136 bytes
+two equal strings: == false, equals() true
+native before: - Symbol (reserved=1441KB, committed=1441KB); - String Deduplication (reserved=292KB, committed=292KB)
+native after:  - Symbol (reserved=1453KB, committed=1453KB); - String Deduplication (reserved=7585KB, committed=7585KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseG1GC intern
+String: 1,032 instances, 24,768 bytes
+byte[]: 1,032 instances, 33,528 bytes
+total:  58,296 bytes
+two equal strings: == true, equals() true
+native before: - Symbol (reserved=1232KB, committed=1232KB); - String Deduplication (reserved=1KB, committed=1KB)
+native after:  - Symbol (reserved=1268KB, committed=1268KB); - String Deduplication (reserved=1KB, committed=1KB)
+
+JDK 27+35-2325 -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseG1GC -XX:+UseStringDeduplication intern
+String: 1,032 instances, 24,768 bytes
+byte[]: 1,022 instances, 33,112 bytes
+total:  57,880 bytes
+two equal strings: == true, equals() true
+native before: - Symbol (reserved=1232KB, committed=1232KB); - String Deduplication (reserved=79KB, committed=79KB)
+native after:  - Symbol (reserved=1268KB, committed=1268KB); - String Deduplication (reserved=103KB, committed=103KB)
