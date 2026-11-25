@@ -19,4 +19,13 @@ java -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseG1GC -XX:+UseStringDeduplic
 java -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseG1GC -cp target/benchmarks.jar eu.happycoders.string.benchmark.EqualStringsMemory intern
 ```
 
-Results (JDK 27, Apple M5 Pro): `results/string/apple-m5-pro/`
+JMH benchmarks in the same package (not measured yet):
+
+* `InternBenchmark` – `intern()` against `ConcurrentHashMap.putIfAbsent()` on strings that are already known
+* `EqualsBenchmark` – `equals()` against `==`
+
+```
+java -jar target/benchmarks.jar "string.benchmark.(Intern|Equals)Benchmark" -rf json -rff results/string/apple-m5-pro/jmh-jdk27.json
+```
+
+Memory results (JDK 27, Apple M5 Pro): `results/string/apple-m5-pro/`
