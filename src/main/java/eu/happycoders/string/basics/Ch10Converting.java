@@ -18,9 +18,14 @@ public class Ch10Converting {
     System.out.println(String.valueOf(true) + " " + String.valueOf('x'));
 
     System.out.println("== char[]");
-    char[] chars = "Java".toCharArray();
+    String java = "Java";
+    char[] chars = java.toCharArray();
     chars[0] = 'L';
-    System.out.println(new String(chars));
+    System.out.println(java);
+
+    String lava = new String(chars);
+    chars[0] = 'J';
+    System.out.println(lava);
 
     System.out.println("== byte[]");
     byte[] utf8 = "Grüße".getBytes(StandardCharsets.UTF_8);
