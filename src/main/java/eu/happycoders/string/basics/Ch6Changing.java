@@ -5,6 +5,7 @@ import java.util.Locale;
 public class Ch6Changing {
 
   static void main() {
+    System.out.println("1.000.000".replace('.', ','));
     System.out.println("1.000.000".replace(".", ""));
     System.out.println("1.000.000".replaceAll(".", ""));
     System.out.println("1.000.000".replaceAll("\\.", ""));
