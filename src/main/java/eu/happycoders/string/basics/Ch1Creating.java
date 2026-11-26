@@ -29,15 +29,5 @@ public class Ch1Creating {
         }
         """;
     System.out.print(json);
-
-    System.out.println("== stripIndent() and indent()");
-    String sql = "    SELECT name\n      FROM users";
-    System.out.println(sql.stripIndent());
-    System.out.print(sql.stripIndent().indent(2));
-
-    System.out.println("== translateEscapes()");
-    String raw = "Name:\\tAda\\nName:\\tGrace";
-    System.out.println(raw);
-    System.out.println(raw.translateEscapes());
   }
 }

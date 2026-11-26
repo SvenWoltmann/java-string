@@ -24,5 +24,15 @@ public class Ch6Changing {
     System.out.println("== repeat() and reverse");
     System.out.println("-".repeat(10));
     System.out.println(new StringBuilder("Hallo").reverse().toString());
+
+    System.out.println("== stripIndent() and indent()");
+    String sql = "    SELECT name\n      FROM users";
+    System.out.println(sql.stripIndent());
+    System.out.print(sql.stripIndent().indent(2));
+
+    System.out.println("== translateEscapes()");
+    String raw = "Name:\\tAda\\nName:\\tGrace";
+    System.out.println(raw);
+    System.out.println(raw.translateEscapes());
   }
 }
