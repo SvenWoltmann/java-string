@@ -19,7 +19,7 @@ public class Ch1Creating {
     System.out.println("Sie sagte: \"Hallo\"");
     System.out.println("C:\\Users\\ada");
     System.out.println("Name:\tAda\nName:\tGrace");
-    System.out.println("Gr\u00fc\u00dfe");
+    System.out.println("Kaffee: \u2615");
 
     System.out.println("== Text block");
     String json =
