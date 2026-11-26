@@ -19,13 +19,14 @@ java -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseG1GC -XX:+UseStringDeduplic
 java -Xmx4g -XX:NativeMemoryTracking=summary -XX:+UseG1GC -cp target/benchmarks.jar eu.happycoders.string.benchmark.EqualStringsMemory intern
 ```
 
-JMH benchmarks in the same package (`settled=false` is the first run of 2026-11-25; `settled=true` is not measured yet):
+JMH benchmarks in the same package (`jmh-jdk27.json` is the first run of 2026-11-25, before the `settled` parameter existed, so its `intern()` figures correspond to `settled=false`; `jmh-jdk27-intern-settled.json` is the rerun of `intern()` with `settled=true` on 2026-11-26):
 
 * `InternBenchmark` – `intern()` against `ConcurrentHashMap.putIfAbsent()` on strings that are already known
 * `EqualsBenchmark` – `equals()` against `==`
 
 ```
 java -jar target/benchmarks.jar "string.benchmark.(Intern|Equals)Benchmark" -rf json -rff results/string/apple-m5-pro/jmh-jdk27.json
+java -jar target/benchmarks.jar "InternBenchmark.intern" -p settled=true -rf json -rff results/string/apple-m5-pro/jmh-jdk27-intern-settled.json
 ```
 
 Results (JDK 27, Apple M5 Pro): `results/string/apple-m5-pro/`
