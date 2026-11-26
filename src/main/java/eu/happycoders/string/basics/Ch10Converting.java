@@ -1,5 +1,6 @@
 package eu.happycoders.string.basics;
 
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
@@ -31,5 +32,9 @@ public class Ch10Converting {
     List<String> list = Arrays.asList(parts);
     System.out.println(list);
     System.out.println(String.join(";", list));
+
+    System.out.println("== transform()");
+    BigDecimal price = " 19.99 ".strip().transform(BigDecimal::new);
+    System.out.println(price.multiply(BigDecimal.TWO));
   }
 }
