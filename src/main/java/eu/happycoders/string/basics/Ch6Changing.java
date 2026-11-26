@@ -28,6 +28,7 @@ public class Ch6Changing {
 
     System.out.println("== stripIndent() and indent()");
     String sql = "    SELECT name\n      FROM users";
+    System.out.println(sql);
     System.out.println(sql.stripIndent());
     System.out.print(sql.stripIndent().indent(2));
 
