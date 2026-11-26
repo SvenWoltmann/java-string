@@ -8,7 +8,7 @@ The code uses Java 25 language features and needs Java 25 or newer. Build it wit
 
 ## Java String – `eu.happycoders.string`
 
-The examples of the article are in `eu.happycoders.string.basics`, one class per section with a `main()` method that prints the outputs shown in the article (`Intro`, then `Ch1Creating` to `Ch11Internals`). The `equalsFoldCase()` example is not among them: the method exists since Java 26, and the repository stays on Java 25.
+The examples of the article are in `eu.happycoders.string.basics`, one class per section with a `main()` method that prints the outputs shown in the article (`Intro`, then `Ch1Creating` to `Ch11Internals`). These classes belong to the German article. The English article uses the same classes in `eu.happycoders.string.basics.en`, with English text wherever the German text is not the point of the example. The `equalsFoldCase()` example is not among them: the method exists since Java 26, and the repository stays on Java 25.
 
 Memory measurements in `eu.happycoders.string.benchmark` (not JMH; class histograms after a full garbage collection):
 
